@@ -42,7 +42,14 @@ app.post("/registerPersistentAccount", async (req, res) => {
         await persistentAccount.save();
     
         // Return a success response
-        res.status(200).json({ message: 'Persistent account created successfully' });
+        res.status(200).json(
+            { 
+                referenceNumber: req.body.referenceNumber,
+                statusCode: "0",
+                statusMessage: "success",
+                accountReference: req.body.accountReference,
+                accountNumber: req.body.accountNumber, 
+            });
       } catch (error) {
         // Return an error response
         res.status(500).json({ error: 'An error occurred while creating the persistent account' });
