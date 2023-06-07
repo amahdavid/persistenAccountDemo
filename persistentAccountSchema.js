@@ -45,6 +45,10 @@ const persistentAccountSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  accountNumber: {
+    type: String,
+    required: true,
+  },
 });
 
 const PersistentAccount = mongoose.model(
